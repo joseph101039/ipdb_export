@@ -14,7 +14,7 @@ class District
 
     public function __construct($db)
     {
-        $this->reader = new Reader($db);
+        $this->reader = new RdmReader($db);
     }
 
     public function find($ip, $language)
