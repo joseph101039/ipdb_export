@@ -218,7 +218,7 @@ class Reader
      * @return mixed
      * @throws \Exception
      */
-    private function readNode($node, $index)
+    protected function readNode($node, $index)
     {
         return unpack('N', $this->read($this->file, $node * 8 + $index * 4, 4))[1];
     }
@@ -228,7 +228,7 @@ class Reader
      * @return mixed
      * @throws \Exception
      */
-    private function resolve($node)
+    protected function resolve($node)
     {
         $resolved = $node - $this->nodeCount + $this->nodeCount * 8;
         if ($resolved >= $this->fileSize)

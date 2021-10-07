@@ -1,3 +1,14 @@
+# Introduction
+基於 ipdb-php 擴充 IPDB 轉換成 TXT 函式，參考以下範例
+
+```php
+$ipdb_file = "your_source_ipdb_path.ipdb";
+$db = new BaseStation( $ipdb_file);
+// ipdb 轉換成 txt 的匯出, 可選擇 Reader::IPV4 或 Reader::IPV6
+$db->reader->traverse("your_export_file_path.txt", \ipip\db\Reader::IPV4);
+```
+
+
 # ipdb-php
 IPIP.net officially supported IP database ipdb format parsing library
 
