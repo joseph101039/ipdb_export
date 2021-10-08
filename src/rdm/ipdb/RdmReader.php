@@ -53,7 +53,7 @@ class RdmReader extends Reader
                 throw new \Exception("Unkown ip_type");
         }
 
-        file_put_contents($export_file, implode("\t", [... $ip_headers, ...$this->meta['fields']]). PHP_EOL);
+        file_put_contents($export_file, implode("\t", array_merge($ip_headers, $this->meta['fields'])). PHP_EOL);
         
         $this->exportFile = fopen($export_file, 'a+');
         $this->readRootIndexNode($node_offset, $ip_type);
@@ -156,12 +156,7 @@ class RdmReader extends Reader
                    
                 ];
             }
-           
-            $segment = [
-                ...$ip_rows,
-                ... $data_node
-            ];
-            
+            $segment = array_merge($ip_rows, $data_node);
             fwrite($this->exportFile, implode("\t", $segment) . PHP_EOL);
             return $data_node;
         }
