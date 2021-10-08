@@ -4,7 +4,7 @@
  * 繼承 ipdb reader 擴充部分函式
  */
 
-namespace ipip\db;
+namespace RDM\Ipdb;
 
 
 class RdmReader extends Reader

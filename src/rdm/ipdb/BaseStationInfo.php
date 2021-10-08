@@ -6,16 +6,16 @@
  * @copyright IPIP.net
  */
 
-namespace ipip\db;
+namespace RDM\Ipdb;
 
-class IDCInfo
+class BaseStationInfo
 {
     public $country_name = '';
     public $region_name  = '';
     public $city_name    = '';
     public $owner_domain = '';
     public $isp_domain   = '';
-    public $idc          = '';
+    public $base_station = '';
 
     public function __construct(array $data)
     {

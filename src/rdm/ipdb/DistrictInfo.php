@@ -6,7 +6,7 @@
  * @copyright IPIP.net
  */
 
-namespace ipip\db;
+namespace RDM\Ipdb;
 
 class DistrictInfo
 {

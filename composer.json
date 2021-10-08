@@ -1,15 +1,14 @@
 {
-    "name": "ipip/db",
+    "name": "trd-rdm/ipdb-export",
     "type": "library",
     "description": "IPIP.net officially supported IP database ipdb format parsing library",
-    "keywords": ["ipip.net","geoip","geolocation", "geo","ip","ipdb"],
+    "keywords": ["ipdb"],
     "homepage": "https://www.ipip.net",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "IPIP.net",
-            "email": "frk@ipip.net",
-            "homepage": "https://www.ipip.net"
+            "name": "joseph",
+            "email": "joseph101039@gmail.com"
         }
     ],
     "require": {
@@ -17,7 +16,7 @@
     },    
     "autoload": {
         "psr-4": {
-            "ipip\\db\\": "src/ipip/db/"
+            "RDM\\Ipdb\\": "src/rdm/ipdb/"
         }
     }
 }

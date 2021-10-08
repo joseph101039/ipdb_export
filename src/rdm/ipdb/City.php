@@ -6,9 +6,9 @@
  * @copyright IPIP.net
  */
 
-namespace ipip\db;
+namespace RDM\Ipdb;
 
-class BaseStation
+class City
 {
     public $reader = NULL;
 
@@ -35,6 +35,6 @@ class BaseStation
             return NULL;
         }
 
-        return new BaseStationInfo($map);
+        return new CityInfo($map);
     }
 }

@@ -6,9 +6,9 @@
  * @copyright IPIP.net
  */
 
-namespace ipip\db;
+namespace RDM\Ipdb;
 
-class City
+class District
 {
     public $reader = NULL;
 
@@ -35,6 +35,6 @@ class City
             return NULL;
         }
 
-        return new CityInfo($map);
+        return new DistrictInfo($map);
     }
 }
