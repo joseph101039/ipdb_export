@@ -13,14 +13,14 @@ class Reader
     const IPV4 = 1;
     const IPV6 = 2;
 
-    private $file       = NULL;
-    private $fileSize   = 0;
-    private $nodeCount  = 0;
-    private $nodeOffset = 0;
+    protected $file       = NULL;
+    protected $fileSize   = 0;
+    protected $nodeCount  = 0;
+    protected $nodeOffset = 0;
 
-    private $meta = [];
+    protected $meta = [];
 
-    private $database = '';
+    protected $database = '';
 
     /**
      * Reader constructor.

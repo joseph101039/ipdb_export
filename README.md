@@ -9,19 +9,16 @@ $db->reader->traverse("your_export_file_path.txt", \RDM\ipdb\Reader::IPV4);
 ```
 
 
-# ipdb-php
-IPIP.net officially supported IP database ipdb format parsing library
-
 # Installing
 <pre>
-composer require ipip/db
+composer require trd-rdm/ipdb-export
 </pre>
 
 # Example Code
-<pre>
  
  Language Support: CN(中文) / EN (English); 
 
+```php
 // 全球 IPv4 地级市精度离线库（China：免费版，每周高级版，每日标准版，每日高级版，每日专业版，每日旗舰版）
 $city = new ipip\db\City('c:\work\ipdb\city.free.ipdb');
 var_dump($city->find('118.28.1.1', 'CN'));
@@ -53,5 +50,4 @@ $baseStation = new ipip\db\BaseStation('c:\work\ipdb\base_station.ipdb');
 var_dump($baseStation->find('223.220.221.255', 'CN'));
 var_dump($baseStation->findMap('223.220.221.255', 'CN'));
 var_dump($baseStation->findInfo('223.220.221.255', 'CN'));
-
-</pre>
+```

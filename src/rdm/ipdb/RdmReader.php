@@ -19,6 +19,11 @@ class RdmReader extends Reader
      */
     const IPV6_BIT_LEN =  128;
 
+    /**
+     * @var resource|null $exportFile - File handler of exported file
+     */
+    protected $exportFile = null;
+
      /**
      * @author Joseph_Li
      * Traverse all ipdb database and export txt by ip ranges
