@@ -5,7 +5,7 @@
 $ipdb_file = "your_source_ipdb_path.ipdb";
 $db = new BaseStation( $ipdb_file);
 // ipdb 轉換成 txt 的匯出, 可選擇 Reader::IPV4 或 Reader::IPV6
-$db->reader->traverse("your_export_file_path.txt", \ipip\db\Reader::IPV4);
+$db->reader->traverse("your_export_file_path.txt", \RDM\ipdb\Reader::IPV4);
 ```
 
 
