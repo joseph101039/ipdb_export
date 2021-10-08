@@ -105,7 +105,7 @@ class RdmReader extends Reader
     /**
      * 由根節點向下查詢
      */
-    private function readRootIndexNode($root_node, bool $ip_type) {
+    private function readRootIndexNode($root_node, $ip_type) {
         $ip_bits = [];
         $this->readIndexNode($root_node, $ip_bits, "CN", $ip_type);
     }
