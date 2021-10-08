@@ -156,7 +156,7 @@ class RdmReader extends Reader
                    
                 ];
             }
-            $segment = array_merge($ip_rows, $data_node);
+            $segment = array_merge($ip_rows, array_values($data_node));
             fwrite($this->exportFile, implode("\t", $segment) . PHP_EOL);
             return $data_node;
         }
