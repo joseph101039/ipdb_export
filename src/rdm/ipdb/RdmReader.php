@@ -131,6 +131,14 @@ class RdmReader extends Reader
             // 當 node id 大於 meta data 中的 node_count 時即為資料節點, 查詢資料節點
             $data = $this->resolve($node);
             $values = explode("\t", $data);
+
+            // 如果是空字串則替換成 '*'
+            foreach ($values as &$element) {
+                if ($element === '') {
+                    $element = '*';
+                }
+            }
+            unset($element);
             $data_node = array_slice($values, $this->meta['languages'][$language], count($this->meta['fields']));
 
             // 寫檔案       
