@@ -28,8 +28,10 @@ class RdmReader extends Reader
      * @author Joseph_Li
      * Traverse all ipdb database and export txt by ip ranges
      * 針對左右節點執行 二元樹的深度優先搜尋 (DFS, pre-order)
+     * @param s$ip_type IPV4 or IPV6
+     * @param $language 語系 CN/EN ...
      */
-    public function traverse(string $export_file, $ip_type = self::IPV4) {
+    public function traverse(string $export_file, $ip_type = self::IPV4,  $language = 'CN') {
         $start_ip = $ip_type === self::IPV4 ? '0.0.0.0' : '0::';
 
         $node_offset = $this->findNodeOffset( $start_ip);
@@ -56,7 +58,7 @@ class RdmReader extends Reader
         file_put_contents($export_file, implode("\t", array_merge($ip_headers, $this->meta['fields'])). PHP_EOL);
         
         $this->exportFile = fopen($export_file, 'a+');
-        $this->readRootIndexNode($node_offset, $ip_type);
+        $this->readRootIndexNode($node_offset, $ip_type, $language);
         @fclose($this->exportFile);
     }
 
@@ -105,9 +107,9 @@ class RdmReader extends Reader
     /**
      * 由根節點向下查詢
      */
-    private function readRootIndexNode($root_node, $ip_type) {
+    private function readRootIndexNode($root_node, $ip_type, $language) {
         $ip_bits = [];
-        $this->readIndexNode($root_node, $ip_bits, "CN", $ip_type);
+        $this->readIndexNode($root_node, $ip_bits, $language, $ip_type);
     }
 
     /**

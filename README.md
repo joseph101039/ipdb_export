@@ -4,8 +4,11 @@
 ```php
 $ipdb_file = "your_source_ipdb_path.ipdb";
 $db = new BaseStation( $ipdb_file);
-// ipdb 轉換成 txt 的匯出, 可選擇 Reader::IPV4 或 Reader::IPV6
-$db->reader->traverse("your_export_file_path.txt", \RDM\ipdb\Reader::IPV4);
+// ipdb 轉換成 txt 的匯出, 可選擇 Reader::IPV4 或 Reader::IPV6, 第三個參數為語系 可以輸入 "CN", "EN" 等支援語系
+$db->reader->traverse("your_export_file_path.txt", \RDM\ipdb\Reader::IPV4, "CN");
+
+// 如果需要確認與細雨欄位名稱, 可以查詢 ipdb header 中的 metadata 資訊
+$meta = $db->reader->getMeta();
 ```
 
 
@@ -14,7 +17,7 @@ $db->reader->traverse("your_export_file_path.txt", \RDM\ipdb\Reader::IPV4);
 composer require trd-rdm/ipdb-export
 </pre>
 
-# Example Code
+# Example Code of original ipdb function 
  
  Language Support: CN(中文) / EN (English); 
 
